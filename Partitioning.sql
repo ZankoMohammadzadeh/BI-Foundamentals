@@ -80,11 +80,11 @@ GO
 ALTER TABLE	Employees ADD PRIMARY KEY NONCLUSTERED (EmployeeID) ON [Primary]
 GO
 
-INSERT INTO Employees(FullName, CityCode, HireDate) VALUES ('Jack', 10001, '2019-01-01')
-INSERT INTO Employees(FullName, CityCode, HireDate) VALUES ('Philip', 10001, '2019-05-12')
-INSERT INTO Employees(FullName, CityCode, HireDate) VALUES ('James', 10002, '2020-01-01')
-INSERT INTO Employees(FullName, CityCode, HireDate) VALUES ('Henry', 10003, '2021-12-31')
-INSERT INTO Employees(FullName, CityCode, HireDate) VALUES ('Lucy', 10004, '2022-01-02')
+INSERT INTO Employees(FullName, CityCode, HireDate) VALUES ('Jack', 101, '2019-01-01')
+INSERT INTO Employees(FullName, CityCode, HireDate) VALUES ('Philip', 101, '2019-05-12')
+INSERT INTO Employees(FullName, CityCode, HireDate) VALUES ('James', 102, '2020-01-01')
+INSERT INTO Employees(FullName, CityCode, HireDate) VALUES ('Henry', 103, '2021-12-31')
+INSERT INTO Employees(FullName, CityCode, HireDate) VALUES ('Lucy', 104, '2022-01-02')
 
 -- Show partition number of records
 SELECT
