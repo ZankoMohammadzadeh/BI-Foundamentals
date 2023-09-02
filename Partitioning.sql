@@ -49,12 +49,12 @@ CREATE PARTITION FUNCTION PF_TEST(Date)
 AS RANGE LEFT
 FOR VALUES
 (
-	'2001-12-31', '2002-12-31'
+	'2019-12-31', '2020-12-31', '2021-12-31', '2022-12-31'
 )
 GO
 
 CREATE PARTITION SCHEME PS_TEST
-	AS PARTITION PF_TEST TO (FG2001, FG2002, FG2003)
+	AS PARTITION PF_TEST TO (FG2019, FG2020, FG2021, FG2022, FG2023)
 GO
 
 
@@ -77,11 +77,11 @@ GO
 ALTER TABLE	Employees ADD PRIMARY KEY NONCLUSTERED (EmployeeID) ON [Primary]
 GO
 
-INSERT INTO Employees(FullName, CityCode, HireDate) VALUES ('Jack', 10001, '2000-01-01')
-INSERT INTO Employees(FullName, CityCode, HireDate) VALUES ('Philip', 10001, '2001-05-12')
-INSERT INTO Employees(FullName, CityCode, HireDate) VALUES ('James', 10002, '2002-01-01')
-INSERT INTO Employees(FullName, CityCode, HireDate) VALUES ('Henry', 10003, '2002-12-31')
-INSERT INTO Employees(FullName, CityCode, HireDate) VALUES ('Lucy', 10004, '2006-01-02')
+INSERT INTO Employees(FullName, CityCode, HireDate) VALUES ('Jack', 10001, '2019-01-01')
+INSERT INTO Employees(FullName, CityCode, HireDate) VALUES ('Philip', 10001, '2019-05-12')
+INSERT INTO Employees(FullName, CityCode, HireDate) VALUES ('James', 10002, '2020-01-01')
+INSERT INTO Employees(FullName, CityCode, HireDate) VALUES ('Henry', 10003, '2021-12-31')
+INSERT INTO Employees(FullName, CityCode, HireDate) VALUES ('Lucy', 10004, '2022-01-02')
 
 -- Show partition number of records
 SELECT
@@ -89,10 +89,4 @@ SELECT
 	,*
 FROM Employees
 
------------------------------------------------
--------- ColumnStoreIndex
-
-CREATE CLUSTERED COLUMNSTORE INDEX IX_ColumnStoreIndex ON FactSales
-
-SP_SPACEUSED Employees
 
