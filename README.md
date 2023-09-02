@@ -46,39 +46,26 @@ Index:
 
 Partitioning:
 
-USE master
-GO
-IF DB_ID('PartitioningDB_Test')>0
-BEGIN
-	ALTER DATABASE PartitioningDB_Test SET SINGLE_USER WITH ROLLBACK IMMEDIATE
-	DROP DATABASE PartitioningDB_Test
-END
-GO
+<img width="601" alt="image" src="https://github.com/ZankoMohammadzadeh/BI-Foundamentals/assets/42311741/78410ef7-91b8-407a-94c8-5a76bfce4ed2">
 
-CREATE DATABASE PartitioningDB_Test
-GO
-USE PartitioningDB_Test
-GO
 
-SP_HELPFILE
--- CREATE FILE GROUPS
-ALTER DATABASE PartitioningDB_Test ADD FILEGROUP FG2001
-ALTER DATABASE PartitioningDB_Test ADD FILEGROUP FG2002
-ALTER DATABASE PartitioningDB_Test ADD FILEGROUP FG2003
-ALTER DATABASE PartitioningDB_Test ADD FILEGROUP FG2004
-ALTER DATABASE PartitioningDB_Test ADD FILEGROUP FG2005
+<img width="846" alt="image" src="https://github.com/ZankoMohammadzadeh/BI-Foundamentals/assets/42311741/4df3880a-084d-4ae5-8c72-78031a0a433f">
 
--- ADD DITA FILES TO FILE GROUPS
-ALTER DATABASE PartitioningDB_Test ADD FILE 
-	(Name='Data2001', Filename='\\Mac\Home\Documents\CurrentLearning\SampleDatabases\SSIS_Samples\Data2001.ndf') TO FILEGROUP FG2001
-ALTER DATABASE PartitioningDB_Test ADD FILE 
-	(Name='Data2002', Filename='\\Mac\Home\Documents\CurrentLearning\SampleDatabases\SSIS_Samples\Data2002.ndf') TO FILEGROUP FG2002
-ALTER DATABASE PartitioningDB_Test ADD FILE 
-	(Name='Data2003', Filename='\\Mac\Home\Documents\CurrentLearning\SampleDatabases\SSIS_Samples\Data2003.ndf') TO FILEGROUP FG2003
 
-SP_HELPFILE
+<img width="422" alt="image" src="https://github.com/ZankoMohammadzadeh/BI-Foundamentals/assets/42311741/b39c39e5-af72-4f82-bf49-a97bee8d5b94">
 
+
+<img width="962" alt="image" src="https://github.com/ZankoMohammadzadeh/BI-Foundamentals/assets/42311741/bbda1dbf-7038-4428-9dcb-6498b7b7c65a">
+
+
+<img width="865" alt="image" src="https://github.com/ZankoMohammadzadeh/BI-Foundamentals/assets/42311741/b30b2140-b020-496f-b147-4a9e75e0dba8">
+
+
+If we want remove any Data Files we can use this SQL command
 -- ALTER DATABASE PartitioningDB_Test REMOVE FILE Data2002
+
+
+
 
 
 CREATE PARTITION FUNCTION PF_TEST(INT)
