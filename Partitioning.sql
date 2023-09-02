@@ -52,6 +52,9 @@ FOR VALUES
 	'2019-12-31', '2020-12-31', '2021-12-31', '2022-12-31'
 )
 GO
+-- first value of boundary values, is the maximum value of first partition
+-- if RANGE RIGHT => first value is the minimum value of second partition
+
 
 CREATE PARTITION SCHEME PS_TEST
 	AS PARTITION PF_TEST TO (FG2019, FG2020, FG2021, FG2022, FG2023)
