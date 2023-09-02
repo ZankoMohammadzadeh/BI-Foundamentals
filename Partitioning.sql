@@ -52,8 +52,8 @@ FOR VALUES
 	'2019-12-31', '2020-12-31', '2021-12-31', '2022-12-31'
 )
 GO
--- first value of boundary values, is the maximum value of first partition
--- if RANGE RIGHT => first value is the minimum value of second partition
+-- first value of boundary values, is the maximum value of the first partition
+-- if RANGE RIGHT => first value is the minimum value of the second partition
 
 
 CREATE PARTITION SCHEME PS_TEST
