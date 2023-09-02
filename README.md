@@ -16,6 +16,7 @@ Data Warehouse Schemas:
 OLAP VS OLTP:
 
 Dimension:
+
   types of dimension:
     - Junk Dimension
     - Degenerate Dimension
