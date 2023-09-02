@@ -40,9 +40,10 @@ Data files can be grouped together in filegroups for allocation and administrati
 In sql server we cannot access data files directly. We have to work with file groups.
 
 Index:
-  - Clustered Index
-  - NonClustered Index
-
+  - Clustered Index : A Clustered index is a type of index in which table records are physically reordered to match the index.
+  - NonClustered Index : A Non-Clustered index is a special type of index in which the logical order of the index does not match the physical stored order of the rows on the disk. Another Index table will be created.
+ 
+If your index is not unique, sql server put a key beside of records to make it unique (so it is better to select a clustered index as unique ourself)
 
 Partitioning:
 
@@ -62,66 +63,45 @@ Partitioning:
 
 
 If we want remove any Data Files we can use this SQL command
--- ALTER DATABASE PartitioningDB_Test REMOVE FILE Data2002
+ALTER DATABASE PartitioningDB_Test REMOVE FILE Data2002
+
+
+first value of boundary values, is the maximum value of first partition
+if RANGE RIGHT => first value is the minimum value of second partition
+
+
+<img width="518" alt="image" src="https://github.com/ZankoMohammadzadeh/BI-Foundamentals/assets/42311741/c69802ae-12d4-4631-9248-77c5d5e2bd88">
 
 
 
+If your Table exists do not need to create it. Just set it's Index
 
+<img width="322" alt="image" src="https://github.com/ZankoMohammadzadeh/BI-Foundamentals/assets/42311741/29451163-caf9-4cc2-a170-7947ba29a14a">
 
-CREATE PARTITION FUNCTION PF_TEST(INT)
-AS RANGE RIGHT
-FOR VALUES   -- boundary values
-(
-	20020101, 20030101
-)
-GO
--- first value of boundary values, is the maximum value of first partition
--- if RANGE RIGHT => first value is the minimum value of second partition
-
-CREATE PARTITION SCHEME PS_TEST
-	AS PARTITION PF_TEST TO (FG2001, FG2002, FG2003)
-GO
-
-
-
-DROP TABLE IF EXISTS Employees
-GO
-CREATE TABLE Employees
-(
-	EmployeeID int identity,
-	FullName nvarchar(700),
-	CityCode tinyint,
-	HireDate Date
-)
-GO
 
 
 If there is a cluster index before, we have to delete them. Then we should create new partitioned clustered index 
-
 Partition Key must be participated in Partition Index.
 
-A Clustered index is a type of index in which table records are physically reordered to match the index. A Non-Clustered index is a special type of index in which the logical order of the index does not match the physical stored order of the rows on the disk.
-If your index is not unique, sql server put a key beside of records to make it unique (so it is better to select a clustered index as unique ourself)
+<img width="440" alt="image" src="https://github.com/ZankoMohammadzadeh/BI-Foundamentals/assets/42311741/e4cd5627-3c0d-450e-a13f-f886e266f45f">
 
--- Table partitioning
-CREATE UNIQUE CLUSTERED INDEX IX_Clustered_Employees
-	ON Employees(HireDate, EmployeeID) ON PS_TEST(HireDate)
-GO
 
-ALTER TABLE	Employees ADD PRIMARY KEY NONCLUSTERED (EmployeeID) ON [Primary]
-GO
+Here we want to insert some records in our table.
 
-INSERT INTO Employees(FullName, CityCode, HireDate) VALUES ('Jack', 10001, '2000-01-01')
-INSERT INTO Employees(FullName, CityCode, HireDate) VALUES ('Philip', 10001, '2001-05-12')
-INSERT INTO Employees(FullName, CityCode, HireDate) VALUES ('James', 10002, '2002-01-01')
-INSERT INTO Employees(FullName, CityCode, HireDate) VALUES ('Henry', 10003, '2002-12-31')
-INSERT INTO Employees(FullName, CityCode, HireDate) VALUES ('Lucy', 10004, '2006-01-02')
+<img width="648" alt="image" src="https://github.com/ZankoMohammadzadeh/BI-Foundamentals/assets/42311741/03d5efba-e34e-4e9a-86c4-9ee027da8646">
 
--- Show partition number of records
-SELECT
-	$PARTITION.PF_TEST(HireDate) AS partitionNu
-	,*
-FROM Employees
+
+
+Then by this query we can find out which file group exactly our records stored.
+
+<img width="401" alt="image" src="https://github.com/ZankoMohammadzadeh/BI-Foundamentals/assets/42311741/527491a5-d370-4f6b-9d8e-42bf805c3f71">
+
+
+
+
+- Business Key :
+
+- Surrogate Key : 
 
 
 COLUMNSTORE INDEX:
