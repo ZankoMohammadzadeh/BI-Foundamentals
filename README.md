@@ -2,19 +2,23 @@
 
 Let's begin this section by introducing some essential terms in Business Intelligence.
 
-Business Intelligence (BI): Business Intelligence is a technology-driven process for analyzing and presenting data to help businesses make informed decisions. It involves the collection, integration, analysis, and presentation of data to support decision-making within an organization.
 
-Data Warehouse: A data warehouse is a large, centralized repository of data that is specifically designed for the purpose of storing, organizing, and analyzing vast amounts of data from various sources. It is a critical component of business intelligence (BI) and data analytics systems, as it enables organizations to make informed decisions based on historical and current data.
+**Business Intelligence (BI):** Business Intelligence is a technology-driven process for analyzing and presenting data to help businesses make informed decisions. It involves the collection, integration, analysis, and presentation of data to support decision-making within an organization.
+
+
+**Data Warehouse:** A data warehouse is a large, centralized repository of data that is specifically designed for the purpose of storing, organizing, and analyzing vast amounts of data from various sources. It is a critical component of business intelligence (BI) and data analytics systems, as it enables organizations to make informed decisions based on historical and current data.
 In data warehouse we should consider our data in 4 parameters.
   - Subject Oriented: our data should stored based on subject of our business.
   - Integrated: consolidate data from different sources
   - Time-variant: store historical data, typically over an extended period
   - Non-volatile: do not update or delete our data when it undergoes changes
 
-Data Warehouse Schemas:
-  - Star Schema
-  - Snowflake Schema
-  - Constellation Schema
+
+**Data Warehouse Schemas:** Data warehouse schemas are structures used to organize and define the layout of data within a data warehouse.
+  - Star Schema: In a star schema, data is organized into fact tables and dimension tables. Fact tables contain numerical or quantitative data, while dimension tables contain descriptive information. This design simplifies querying for analytical purposes.
+  - Snowflake Schema: A snowflake schema is a variation of the star schema where dimension tables are normalized, meaning they are broken down into sub-dimensions, resulting in a more complex but normalized structure.
+  Choosing between a star schema and a snowflake schema depends on specific business requirements, query patterns, and trade-offs between simplicity and data redundancy.
+
 
 ![image](https://github.com/ZankoMohammadzadeh/BI-Foundamentals/assets/42311741/3b9398cc-b535-4e48-aa64-cb66830a3167)
 
