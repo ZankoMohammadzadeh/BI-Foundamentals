@@ -23,16 +23,18 @@ In data warehouse we should consider our data in 4 parameters.
 ![image](https://github.com/ZankoMohammadzadeh/BI-Foundamentals/assets/42311741/3b9398cc-b535-4e48-aa64-cb66830a3167)
 
 
-OLAP VS OLTP:
 
-Dimension:
+**Dimension:** Dimensions are attributes or characteristics that provide context and descriptive information about the data in a data warehouse. They help answer questions like "who", "what", "where", "when", and "how". Dimensions are typically non-numeric and represent categories or hierarchies (Time, Geography, Customer, Product, Employee). Dimensions are used to filter, group, and slice data in queries and reports. 
 
-  types of dimension:
+ - types of dimension:
     - Junk Dimension
     - Degenerate Dimension
     - Role-playing Dimension
 
-Fact:
+**Fact:** Facts are numerical measures or quantitative data that represent business metrics or key performance indicators (KPIs). Facts are typically the central focus of data analysis and decision-making in a data warehouse.
+
+
+
 
 SCD (Slowly Change Dimension):
 
