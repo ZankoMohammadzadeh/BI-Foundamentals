@@ -2,11 +2,14 @@
 
 Let's begin this section by introducing some essential terms in Business Intelligence.
 
-Data Warehouse:
-  - Subject Oriented
-  - Integrated
-  - Time-variant
-  - Non-volatile
+Business Intelligence (BI): Business Intelligence is a technology-driven process for analyzing and presenting data to help businesses make informed decisions. It involves the collection, integration, analysis, and presentation of data to support decision-making within an organization.
+
+Data Warehouse: A data warehouse is a large, centralized repository of data that is specifically designed for the purpose of storing, organizing, and analyzing vast amounts of data from various sources. It is a critical component of business intelligence (BI) and data analytics systems, as it enables organizations to make informed decisions based on historical and current data.
+In data warehouse we should consider our data in 4 parameters.
+  - Subject Oriented: our data should stored based on subject of our business.
+  - Integrated: consolidate data from different sources
+  - Time-variant: store historical data, typically over an extended period
+  - Non-volatile: do not update or delete our data when it undergoes changes
 
 Data Warehouse Schemas:
   - Star Schema
