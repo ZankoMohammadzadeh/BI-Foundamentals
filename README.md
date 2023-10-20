@@ -45,22 +45,23 @@ In a data warehousing environment, dimensions often change over time due to vari
   4) SCD Type 4 (SCD4): SCD Type 4, also known as a Hybrid approach, combines elements of Type 1 and Type 2. It uses separate tables to maintain both the current data and historical data, making it a hybrid approach.
 
 
-ETL (Extract Transform Load):
-The process of combining data from multiple sources into a large, central repository called a data warehouse. ETL uses a set of business rules to clean and organize raw data and prepare it for storage, data analytics, and machine learning (ML).
+**ETL (Extract Transform Load):** The process of combining data from multiple sources into a large, central repository called a data warehouse. ETL uses a set of business rules to clean and organize raw data and prepare it for storage, data analytics, and machine learning (ML).
 
+**Business Key :** In Business Intelligence (BI) and data modeling, a business key refers to a unique identifier or attribute that is used to uniquely identify an entity or record within a dataset. Business keys are essential for data integration, data quality, and ensuring data consistency, particularly in data warehousing and data modeling contexts. They serve as a fundamental concept for connecting and linking data from various sources within an organization.
 
-FileGroup and DataFile:
-Data Files contain data and objects such as tables, indexes, stored procedures, and views.
+**Surrogate Key :** A surrogate key is an artificial, system-generated identifier that is used to uniquely identify rows in a database table, particularly in dimension tables. Surrogate keys are introduced to address specific needs and challenges in data modeling, data integration, and data warehousing. They serve as an alternative to natural or business keys.
+
+**FileGroup and DataFile:** Data Files contain data and objects such as tables, indexes, stored procedures, and views.
 Data files can be grouped together in filegroups for allocation and administration purposes.
 In sql server we cannot access data files directly. We have to work with file groups.
 
-Index:
+**Index:**
   - Clustered Index : A Clustered index is a type of index in which table records are physically reordered to match the index.
   - NonClustered Index : A Non-Clustered index is a special type of index in which the logical order of the index does not match the physical stored order of the rows on the disk. Another Index table will be created.
  
 If your index is not unique, sql server put a key beside of records to make it unique (so it is better to select a clustered index as unique ourself)
 
-Partitioning:
+**Partitioning:**
 
 <img width="601" alt="image" src="https://github.com/ZankoMohammadzadeh/BI-Foundamentals/assets/42311741/78410ef7-91b8-407a-94c8-5a76bfce4ed2">
 
@@ -113,13 +114,6 @@ Then by this query we can find out which file group exactly our records stored.
 
 
 
-
-- Business Key :
-
-- Surrogate Key : 
-
-
-COLUMNSTORE INDEX:
 
 
 
