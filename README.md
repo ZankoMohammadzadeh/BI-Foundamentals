@@ -36,7 +36,13 @@ In data warehouse we should consider our data in 4 parameters.
 
 
 
-SCD (Slowly Change Dimension):
+**SCD (Slowly Change Dimension):** It refers to a concept and technique used in data warehousing and data modeling to manage changes to dimensional data over time. Dimensional data typically represents descriptive, textual, or categorical information that is used to analyze and report on facts in a data warehouse. 
+
+In a data warehousing environment, dimensions often change over time due to various reasons such as updates, inserts, or deletions. SCDs are used to categorize how these changes are managed. There are several types of SCDs:
+  1) SCD Type 1 (SCD1): In this approach, historical data is simply overwritten with new data. It's like updating the dimension with the most current information without keeping any historical records. This method is suitable when historical data isn't important.
+  2) SCD Type 2 (SCD2): SCD Type 2 maintains a history of changes by adding new rows for each change while preserving the old data. Each row typically has an effective date range, allowing you to analyze data as it existed at different points in time. This method is useful when you need to keep a historical record of changes to dimensions.
+  3) SCD Type 3 (SCD3): SCD Type 3 tracks a limited amount of historical data by adding columns to the existing dimension table to store some historical values. This approach is suitable for scenarios where you need to track a few important changes without a complete historical record.
+  4) SCD Type 4 (SCD4): SCD Type 4, also known as a Hybrid approach, combines elements of Type 1 and Type 2. It uses separate tables to maintain both the current data and historical data, making it a hybrid approach.
 
 
 ETL (Extract Transform Load):
