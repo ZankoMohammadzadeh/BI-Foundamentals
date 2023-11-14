@@ -51,6 +51,12 @@ In a data warehousing environment, dimensions often change over time due to vari
 
 **Surrogate Key :** A surrogate key is an artificial, system-generated identifier that is used to uniquely identify rows in a database table, particularly in dimension tables. Surrogate keys are introduced to address specific needs and challenges in data modeling, data integration, and data warehousing. They serve as an alternative to natural or business keys.
 
+**Measure:** A measure is a quantifiable value used to track or assess a specific process, activity, or phenomenon. It's a raw data point or a fundamental unit of information used for comparison or analysis. For example, sales revenue, website visits, or customer satisfaction scores are measures. They provide basic information but might not directly indicate the success or failure of a specific objective.
+
+**Metric:** A metric is a quantifiable assessment used to gauge the performance, efficiency, or status of a process, action, or system. Metrics often involve calculations or comparisons between multiple measures. They provide context and allow for better understanding of performance. For instance, if you take the measures of sales revenue and number of units sold, the sales revenue per unit sold becomes a metric—a ratio that provides a more insightful understanding of sales performance.
+
+**Key Performance Indicator (KPI):** A KPI is a specific metric that is crucial in evaluating the success of an organization in achieving its strategic and operational goals. KPIs are selected from among various metrics to highlight the most critical aspects of performance. They are directly linked to the organization's objectives and represent the high-level performance targets that are essential for the organization's success. For instance, if the primary goal is to increase market share, a KPI might be the percentage increase in market share over a defined period.
+
 **FileGroup and DataFile:** Data Files contain data and objects such as tables, indexes, stored procedures, and views.
 Data files can be grouped together in filegroups for allocation and administration purposes.
 In sql server we cannot access data files directly. We have to work with file groups.
